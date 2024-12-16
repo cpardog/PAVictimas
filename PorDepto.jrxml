@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PorDepto" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="25eff14c-0d40-4fd6-9d67-035a05b26b15">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[cHJ1ZWJhamF2YS5yZXNvbHVjaW9uZXMgLDE1LDE1LDRjNTI4NTI1LWZhOGEtNDE0Ni05ZDI0LTUw
+NWUyMDdiN2ExZjs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DaResumen.xml"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT count( pruebajava.resoluciones.depto_origen),
+	pruebajava.resoluciones.depto_origen
+FROM pruebajava.resoluciones
+GROUP BY pruebajava.resoluciones.depto_origen
+ORDER BY 1 DESC
+LIMIT 5]]>
+	</queryString>
+	<field name="count( pruebajava.resoluciones.depto_origen)" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="count( pruebajava.resoluciones.depto_origen)"/>
+	</field>
+	<field name="depto_origen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="depto_origen"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="resoluciones"/>
+	</field>
+	<group name="depto_origen">
+		<groupExpression><![CDATA[$F{depto_origen}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="30" width="550" height="30" backcolor="#FFFFFF" uuid="d24d0ed8-39a0-4acf-9919-d53a930a7e9d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Origenes de Beneficiarios por Departamento]]></text>
+			</staticText>
+			<textField pattern="MMM d, yyyy h:mm:ss a">
+				<reportElement x="380" y="70" width="170" height="30" uuid="9d20efed-7ccf-4066-9641-22a5a321c1a4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="-11" y="10" width="592" height="5" uuid="0315104f-a105-49c9-8447-93ebe934f670"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="100" height="30" uuid="75cdfe42-eab7-4ad0-9dd8-40768315dc77">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d77974b3-ecc2-4af1-9743-56b54ad57d03"/>
+				</reportElement>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="5" width="109" height="30" uuid="8d333ce2-c46c-4fa5-bbe8-c95dadc8f8ad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a75344b-f701-43cf-8b81-46821788935c"/>
+				</reportElement>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Depto Origen]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="180" y="0" width="100" height="20" uuid="e1e8dfed-4d3b-4e1b-bc54-adb087a5f0d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d77974b3-ecc2-4af1-9743-56b54ad57d03"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{count( pruebajava.resoluciones.depto_origen)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="110" height="20" uuid="c22099ab-6f6c-4a4f-97ee-595cfc829bdd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a75344b-f701-43cf-8b81-46821788935c"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{depto_origen}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

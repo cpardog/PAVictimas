@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47e9fa3c-b0dd-4653-bb18-7e82fddc36c9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DaResumen.xml"/>
+	<queryString language="SQL">
+		<![CDATA[select  municipio_origen, count( pruebajava.resoluciones.municipio_origen )
+from  pruebajava.resoluciones 
+group by  pruebajava.resoluciones.municipio_origen
+order by 2 DESC limit 4]]>
+	</queryString>
+	<field name="municipio_origen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="municipio_origen"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="resoluciones"/>
+	</field>
+	<field name="count( pruebajava.resoluciones.municipio_origen )" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="count( pruebajava.resoluciones.municipio_origen )"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="550" height="30" uuid="3c4bd719-be1b-469d-ad6c-301f6d90f709"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporte de Beneficiarios Por Municipio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<textField pattern="MMM d, yyyy h:mm:ss a">
+				<reportElement x="360" y="15" width="190" height="15" uuid="f8b197c5-719f-4e7e-8afb-9d88078b810b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="556" height="1" uuid="08988dc8-5955-4297-80cd-c3c502462872"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="30" uuid="53f6275d-1309-4c53-a463-e286fed11231">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68a6805a-3084-4986-a598-054f40df5db7"/>
+				</reportElement>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Municipio Origen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="202" height="30" uuid="5fe7e847-1a85-4b75-8a54-6ea436fc956e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="187f126b-0a50-4fba-963d-071e6bd0d771"/>
+				</reportElement>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Cantidad Beneficiarios]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="150" height="20" uuid="70fdf7cc-5fe4-44bd-91b9-8fded6b6560e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68a6805a-3084-4986-a598-054f40df5db7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{municipio_origen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="277" height="20" uuid="f9f331ce-c8b7-41e2-bf50-e16ae904f855">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="187f126b-0a50-4fba-963d-071e6bd0d771"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{count( pruebajava.resoluciones.municipio_origen )}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
