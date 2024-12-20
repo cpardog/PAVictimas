@@ -108,12 +108,13 @@ public class ResolucionImpl implements IResolucion{
             stmt.setInt(6, resolucion.getFam_beneficiarias());
             stmt.setDouble(7, resolucion.getMonto_resolucion());
             stmt.setString(8, resolucion.getEmitida_por());
-            stmt.setDate(9, resolucion.getFecha_registro());
+            stmt.setDate(9, (java.sql.Date)resolucion.getFecha_registro());
             stmt.setString(10, resolucion.getDepto_origen());
             stmt.setString(11, resolucion.getMunicipio_origen());
             System.out.println("ejecutando query:" + SQL_INSERT);
             rows = stmt.executeUpdate();
-            System.out.println("Registros afectados:" + rows);
+            //System.out.println("Registros afectados:" + rows);
+            JOptionPane.showMessageDialog(null, "El registro se guardó correctamente");
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace(System.out);
         } finally {
