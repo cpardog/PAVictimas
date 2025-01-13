@@ -167,7 +167,7 @@
                                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                                      <EmptySpace pref="52" max="32767" attributes="0"/>
                                       <Component id="txtbuscar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -225,7 +225,7 @@
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbodepto" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                              <EmptySpace pref="26" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbomunicipio" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -579,11 +579,17 @@
               </AuxValues>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jdcfresol">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jdcfregistro">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -642,7 +648,7 @@
                                           <Component id="btnActualizarb" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btnAgregarb" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                                          <EmptySpace pref="48" max="32767" attributes="0"/>
                                           <Component id="btneliminarb" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -804,7 +810,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cedula Beneficiario"/>
+                    <Property name="text" type="java.lang.String" value="Documento  Beneficiario"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel6">
@@ -931,10 +937,11 @@
                 <Component class="javax.swing.JComboBox" name="cbotipodocumento">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="NUIP"/>
-                        <StringItem index="1" value="Registro Civil  de Nacimiento"/>
-                        <StringItem index="2" value="Cedula de Ciudadania"/>
+                      <StringArray count="4">
+                        <StringItem index="0" value="Tarjeta de Identidad"/>
+                        <StringItem index="1" value="NUIP"/>
+                        <StringItem index="2" value="Registro Civil  de Nacimiento"/>
+                        <StringItem index="3" value="Cedula de Ciudadania"/>
                       </StringArray>
                     </Property>
                   </Properties>

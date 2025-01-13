@@ -311,6 +311,10 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jdcfresol.setDateFormatString("yyyy-MM-dd");
+
+        jdcfregistro.setDateFormatString("yyyy-MM-dd");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -407,7 +411,7 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
                                     .addComponent(txtnumresolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(17, 17, 17))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -451,7 +455,7 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
                             .addComponent(cbodepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
                             .addComponent(cbomunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -498,7 +502,7 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
 
         jLabel18.setText("#  Resolucion");
 
-        jLabel19.setText("Cedula Beneficiario");
+        jLabel19.setText("Documento  Beneficiario");
 
         btnbuscarb.setText("Buscar");
 
@@ -572,7 +576,7 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
             .addGap(0, 362, Short.MAX_VALUE)
         );
 
-        cbotipodocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NUIP", "Registro Civil  de Nacimiento", "Cedula de Ciudadania" }));
+        cbotipodocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tarjeta de Identidad", "NUIP", "Registro Civil  de Nacimiento", "Cedula de Ciudadania" }));
 
         jLabel16.setText("Tpo Documento");
 
@@ -592,7 +596,7 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
                                 .addComponent(btnActualizarb)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnAgregarb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                                 .addComponent(btneliminarb))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -867,6 +871,7 @@ public class FrmResoluciones extends javax.swing.JInternalFrame {
                 break;
             case "Risaralda"://14
                 cbomunicipio.removeAllItems();
+                cbomunicipio.addItem("Dosquebradas");
                 cbomunicipio.addItem("Pereira");
                 cbomunicipio.addItem("Santa Rosa de Cabal");
                 cbomunicipio.addItem("Santuario");
